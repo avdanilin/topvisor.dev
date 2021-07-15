@@ -119,6 +119,6 @@ function serve() {
     watch('src/js/**.js', series(js)).on('change', sync.reload)
 }
 
-exports.build = series(clear, html, fav, fonts, img, cssFonts, css, js)
-exports.serve = series(clear, html, fav, fonts, img, cssFonts, css, js, serve)
+exports.build = series(clear, html, fonts, img, cssFonts, css, js) //fav
+exports.serve = series(clear, html, fonts, img, cssFonts, css, js, serve)
 exports.clear = clear
