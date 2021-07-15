@@ -1,9 +1,43 @@
 @font-face {
-	font-family: 'Roboto';
+	font-family: 'Inter';
 	font-weight: 400;
 	font-display: swap;
-	src: url('./fonts/Roboto/Roboto-Regular/Roboto-Regular.eot'),
-	url("./fonts/Roboto/Roboto-Regular/Roboto-Regular.woff") format("woff"),
-	url("./fonts/Roboto/Roboto-Regular/Roboto-Regular.otf") format("opentype"),
-	url("./fonts/Roboto/Roboto-Regular/Roboto-Regular.svg#grablau") format("svg");
+	src: url('./fonts/Inter/Inter-Regular/Inter-Regular.eot'),
+	url("./fonts/Inter/Inter-Regular/Inter-Regular.ttf") format("truetype"),
+	url("./fonts/Inter/Inter-Regular/Inter-Regular.woff") format("woff"),
+	url("./fonts/Inter/Inter-Regular/Inter-Regular.otf") format("opentype"),
+	url("./fonts/Inter/Inter-Regular/Inter-Regular.svg#grablau") format("svg");
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-weight: 500;
+	font-display: swap;
+	src: url('./fonts/Inter/Inter-Medium/Inter-Medium.eot'),
+	url("./fonts/Inter/Inter-Medium/Inter-Medium.ttf") format("truetype"),
+	url("./fonts/Inter/Inter-Medium/Inter-Medium.woff") format("woff"),
+	url("./fonts/Inter/Inter-Medium/Inter-Medium.otf") format("opentype"),
+	url("./fonts/Inter/Inter-Medium/Inter-Medium.svg#grablau") format("svg");
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-weight: 600;
+	font-display: swap;
+	src: url('./fonts/Inter/Inter-SemiBold/Inter-SemiBold.eot'),
+	url("./fonts/Inter/Inter-SemiBold/Inter-SemiBold.ttf") format("truetype"),
+	url("./fonts/Inter/Inter-SemiBold/Inter-SemiBold.woff") format("woff"),
+	url("./fonts/Inter/Inter-SemiBold/Inter-SemiBold.otf") format("opentype"),
+	url("./fonts/Inter/Inter-SemiBold/Inter-SemiBold.svg#grablau") format("svg");
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-weight: 700;
+	font-display: swap;
+	src: url('./fonts/Inter/Inter-Bold/Inter-Bold.eot'),
+	url("./fonts/Inter/Inter-Bold/Inter-Bold.ttf") format("truetype"),
+	url("./fonts/Inter/Inter-Bold/Inter-Bold.woff") format("woff"),
+	url("./fonts/Inter/Inter-Bold/Inter-Bold.otf") format("opentype"),
+	url("./fonts/Inter/Inter-Bold/Inter-Bold.svg#grablau") format("svg");
 }

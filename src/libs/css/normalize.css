@@ -9,8 +9,10 @@
  */
 
 html {
-	line-height: 1.15; /* 1 */
+	height: 100%;
+	line-height: 1.5; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
+	background-color: var(--main-color-white);
 }
 
 /* Sections
@@ -21,6 +23,7 @@ html {
  */
 
 body {
+	height: 100%;
 	margin: 0;
 }
 
@@ -29,7 +32,10 @@ body {
  */
 
 main {
-	display: block;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	flex: 1 0 auto;
 }
 
 /**
@@ -38,8 +44,15 @@ main {
  */
 
 h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
+	font-size: 48px;
+	margin: 0;
+}
+
+h2 {
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 35px;
+	margin-bottom: 12px;
 }
 
 /* Grouping content
@@ -74,6 +87,7 @@ pre {
  */
 
 a {
+	transition: color .3s ease-in-out;
 	background-color: transparent;
 }
 
@@ -106,7 +120,7 @@ code,
 kbd,
 samp {
 	font-family: monospace, monospace; /* 1 */
-	font-size: 1em; /* 2 */
+	font-size: 14px; /* 2 */
 }
 
 /**
@@ -164,7 +178,7 @@ select,
 textarea {
 	font-family: inherit; /* 1 */
 	font-size: 100%; /* 1 */
-	line-height: 1.15; /* 1 */
+	line-height: 1.5; /* 1 */
 	margin: 0; /* 2 */
 }
 

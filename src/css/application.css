@@ -1,0 +1,286 @@
+/*<editor-fold desc="variables">*/
+:root {
+	--main-color-white: #fff;
+	--main-color-black: #142333;
+	--main-color-blue: #4099F1;
+	--main-color-orange: #FF9A3E;
+	--main-color-green: #83F3B2;
+	--main-color-light-blue: #4099F1;
+	--main-color-light-second-blue: #F4F8FB;
+	--second-color-light-blue: #E8F3FF;
+	--second-color-black: #142333;
+	--rare-color-light-blue: #76B9F7;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="default">*/
+.container,
+.container-large,
+.container-small {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container {
+	max-width: 1320px;
+}
+
+.container-large {
+	max-width: 1128px;
+}
+
+.container-small {
+	max-width: 800px;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.icon-v {
+	width: 20px;
+	height: 20px;
+}
+
+.icon-v.blue {
+	transition: fill .3s ease-in-out;
+	fill: var(--main-color-blue);
+}
+
+.link:hover .icon-v.blue {
+	fill: var(--main-color-green);
+}
+
+.btn {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--main-color-blue);
+	font-weight: 600;
+	font-size: 14px;
+	padding: 9px 34px;
+	border-radius: 4px;
+	background-color: transparent;
+	border: 1px solid var(--rare-color-light-blue);
+}
+
+.btn.orange {
+	color: var(--main-color-white);
+	background-color: var(--main-color-orange);
+	border: unset;
+	transition: background-color .3s ease-in-out, transform .3s ease-in;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.btn.orange:hover::after {
+	opacity: 1;
+	transform: rotate(45deg) scale(10);
+}
+
+.btn.orange::after {
+	z-index: -1;
+	background-color: var(--main-color-green);
+	transform: rotate(45deg);
+}
+
+.btn::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 0;
+	background-color: var(--rare-color-light-blue);
+	border-radius: 4px;
+	opacity: 0;
+	transition: height .2s ease-in-out, opacity .2s ease-in-out;
+}
+
+.btn:hover::after {
+	height: 100%;
+	opacity: .25;
+}
+
+.btn.blue {
+	background-color: var(--second-color-light-blue);
+	padding: 10px 34px;
+	border: unset;
+}
+
+section {
+	margin-bottom: 80px;
+}
+
+.description {
+	font-weight: 500;
+	font-size: 14px;
+}
+
+.description.white {
+	font-weight: normal;
+	color: var(--main-color-white);
+}
+
+.card {
+	border-radius: 16px;
+	background-color: var(--main-color-white);
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="header">*/
+.header {
+	display: flex;
+	flex: 0 0 auto;
+	padding: 14px 0;
+}
+
+.header .row {
+	align-items: center;
+	justify-content: space-between;
+}
+
+.header .lc,
+.header .rc {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.header .lc {
+	flex-basis: 165px;
+}
+
+.header .lc span {
+	font-weight: 600;
+	font-size: 24px;
+	color: #142333;
+}
+
+.header .rc {
+	flex-basis: 434px;
+}
+
+.header .icon__wrap {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0 14px;
+	cursor: pointer;
+}
+
+.header .btn__wrap {
+	gap: 0 16px;
+	display: flex;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="sections">*/
+/*<editor-fold desc="section main">*/
+section.main {
+	padding-top: 70px;
+}
+
+section.main .container-large {
+	position: relative;
+	padding-top: 104px;
+	padding-bottom: 96px;
+	border-radius: 24px;
+	background: var(--main-color-blue) url('../img/section-main/football.svg') bottom right / 514px auto no-repeat;
+}
+
+section.main .h-block {
+	max-width: 420px;
+	padding-left: 164px;
+}
+
+section.main .h-block h1 {
+	color: var(--main-color-light-second-blue);
+	margin-bottom: 16px;
+	line-height: 69px;
+	font-weight: bold;
+}
+
+section.main .h-block .description {
+	font-size: 18px;
+	line-height: 26px;
+	margin-bottom: 24px;
+}
+
+section.main .h-block .btn {
+	width: 100%;
+}
+
+section.main .refer {
+	position: absolute;
+	top: 17%;
+	right: 2%;
+	transform: rotate(20deg);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px 16px;
+	color: var(--main-color-green);
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 52px;
+}
+
+section.main .refer:nth-child(2) {
+	top: 22%;
+	right: 27%;
+	transform: rotate(-10deg);
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="section second">*/
+section.second .row {
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: center;
+	gap: 0 20px;
+	margin-bottom: 80px;
+}
+
+section.second .row:last-child {
+	margin-bottom: 0;
+}
+
+section.second .row .lc {
+	flex-shrink: 1;
+}
+
+section.second .row .rc {
+	flex-basis: 38.5%;
+}
+
+section.second .row.second .lc {
+	flex-shrink: 0;
+	flex-basis: 38.5%;
+}
+
+section.second .row.second .rc {
+	position: relative;
+	flex-shrink: 1;
+	flex-basis: auto;
+}
+
+section.second .description {
+	line-height: 20px;
+}
+
+/*</editor-fold>*/
+/*</editor-fold>*/
+
+
+.footer {
+	display: flex;
+	flex: 0 0 auto;
+}

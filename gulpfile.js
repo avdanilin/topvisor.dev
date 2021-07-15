@@ -12,6 +12,8 @@ const pngquant = require('imagemin-pngquant')
 const cache = require('gulp-cache')
 const util = require('gulp-util')
 const sourcemaps = require('gulp-sourcemaps')
+const through = require('through2')
+const favicons = require('gulp-favicons')
 const isProd = util.env.production
 
 function html() {
@@ -32,7 +34,10 @@ function cssFonts() {
 }
 
 function css() {
-    return src(['src/libs/css/**/*.css', 'src/css/**.css'])
+    return src([
+        'src/libs/css/reset.css',
+        'src/libs/css/normalize.css',
+        'src/css/**.css'])
         .pipe(!isProd ? sourcemaps.init() : util.noop())
         .pipe(autoprefixer({
             overrideBrowserslist: ['last 2 versions'],
@@ -69,6 +74,35 @@ function img() {
         .pipe(dest('dist/img'))
 }
 
+function fav() {
+    return src('src/favicon.png')
+        .pipe(favicons({
+            settings: {
+                appName: 'Topvisor',
+                appShortName: 'Topvisor',
+                appDescription: 'Topvisor',
+                path: 'fav/',
+                url: 'Topvisor.com',
+                display: 'standalone',
+                orientation: 'portrait',
+                scope: '',
+                start_url: '',
+                version: 1.0,
+                logging: false,
+                html: 'index.html',
+                pipeHTML: true,
+                replace: true,
+                background: '#E5E5E5',
+                vinylMode: true
+            }
+        }))
+        .pipe(through.obj(function (file, enc, cb) {
+            this.push(file);
+            cb();
+        }))
+        .pipe(dest('dist/fav/'));
+}
+
 function clear() {
     return (del('dist') && cache.clearAll())
 }
@@ -80,9 +114,11 @@ function serve() {
 
     watch('src/**.html', series(html)).on('change', sync.reload)
     watch('src/css/**.css', series(css)).on('change', sync.reload)
+    watch('src/libs/**/*.css', series(css)).on('change', sync.reload)
+    watch('src/img/**', series(img)).on('change', sync.reload)
     watch('src/js/**.js', series(js)).on('change', sync.reload)
 }
 
-exports.build = series(clear, html, fonts, img, cssFonts, css, js)
-exports.serve = series(clear, html, fonts, img, cssFonts, css, js, serve)
+exports.build = series(clear, html, fav, fonts, img, cssFonts, css, js)
+exports.serve = series(clear, html, fav, fonts, img, cssFonts, css, js, serve)
 exports.clear = clear

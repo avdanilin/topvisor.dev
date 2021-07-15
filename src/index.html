@@ -1,10 +1,72 @@
-@@include('parts/header.html')
-<article>
-	<section></section>
-</article>
-
-<!--#TODO
-Сброс и нормалайс привести в порядок
-шрифты
--->
-@@include('parts/footer.html')
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Topvisor — All-in-One SEO and PPC Tools</title>
+	<!-- Web-app manifest -->
+	<link rel="manifest" href="fav/manifest.json"/>
+	<!-- Web-app manifest -->
+	
+	<link rel="icon" href="fav/favicon-16x16.png" type="image/png" sizes="128x128">
+	
+	<!--AppleIcon-->
+	<link rel="apple-touch-icon" sizes="60x60" href="fav/apple-touch-icon-60x60.png"/>
+	<link rel="apple-touch-icon" sizes="76x76" href="fav/apple-touch-icon-76x76.png"/>
+	<link rel="apple-touch-icon" sizes="120x120" href="fav/apple-touch-icon-120x120.png"/>
+	<link rel="apple-touch-icon" sizes="152x152" href="fav/apple-touch-icon-152x152.png"/>
+	<!--AppleIcon-->
+	
+	<!--WinIcon-->
+	<meta name="application-name" content="topvisor.com"/>
+	<meta name="msapplication-tooltip" content="Topvisor — All-in-One SEO and PPC Tools"/>
+	<meta name="msapplication-TileColor" content="#e5e5e5"/>
+	<link as="style" rel="stylesheet preload prefetch" type="text/css" crossorigin="anonymous" href="fonts.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="page">
+	@@include('parts/header.html')
+	<article>
+		<section class="main">
+			<div class="container-large">
+				<div class="h-block">
+					<h1>Зарабатывайте<br> с Топвизор</h1>
+					<p class="description white">Приглашайте в Топвизор новых пользователей
+						и зарабатывайте с каждого до 25600 рублей.</p>
+					<button class="btn orange" type="button">Стать партнёром</button>
+				</div>
+				<div class="card refer">+500 ₽</div>
+				<div class="card refer">+20,000 ₽</div>
+			</div>
+		</section>
+		<section class="second">
+			<div class="container-small">
+				<div class="row">
+					<div class="lc">
+						<img src="img/section-second/pirat.svg" alt="Зарегистрируйтесь и станьте партнером сервиса">
+					</div>
+					<div class="rc">
+						<h2>Зарегистрируйтесь<br> и станьте партнером сервиса</h2>
+						<p class="description">Каждый зарегистрированный пользователь - наш партнёр. Не нужно подавать заявку на участие в программе и ждать ее одобрения.</p>
+					</div>
+				</div>
+				<div class="row second">
+					<div class="lc">
+						<h2>Делитесь своей реферальной ссылкой<br> с друзьями</h2>
+						<p class="description">Друг, который зарегистрировался по ссылке, станет вашим рефералом и получит в два раза больше приветственных бонусов на счёт при регистрации.</p>
+					</div>
+					<div class="rc">
+						<img src="img/section-second/share.svg" alt="Делитесь своей реферальной ссылкой с друзьями">
+					</div>
+				</div>
+			</div>
+		</section>
+	</article>
+	@@include('parts/footer.html')
+</main>
+<script src="app.js"></script>
+@@include('parts/svg.html')
+</body>
+</html>
