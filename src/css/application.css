@@ -2,14 +2,26 @@
 :root {
 	--main-color-white: #fff;
 	--main-color-black: #142333;
+	--main-color-dark: #000;
 	--main-color-blue: #4099F1;
+	--main-color-dark-blue: #9CD7FF;
+	--main-color-light-blue: #E6F4FE;
 	--main-color-orange: #FF9A3E;
 	--main-color-green: #83F3B2;
-	--main-color-light-blue: #4099F1;
 	--main-color-light-second-blue: #F4F8FB;
 	--second-color-light-blue: #E8F3FF;
-	--second-color-black: #142333;
+	--second-color-green: #95A2B0;
+	--second-color-orange: #FFE3CA;
+	--second-color-red: #FFEBE9;
+	--second-color-purple: #F2EDFF;
+	--second-color-mint: #E8FFFF;
+	--third-color-blue: #E9EEFE;
+	--third-color-green: #DDFFEB;
+	--third-color-grey: #DEDEDE;
 	--rare-color-light-blue: #76B9F7;
+	--rare-color-green: #AAF5C9;
+	--rare-color-lignt-green: #E0FFED;
+	--rare-color-opacity-blue: #C6E2FF;
 }
 
 /*</editor-fold>*/
@@ -50,8 +62,64 @@
 	fill: var(--main-color-blue);
 }
 
+.link {
+	font-size: 14px;
+	text-decoration: unset;
+}
+
+.link:hover {
+	text-decoration: underline;
+}
+
+.link.blue {
+	color: var(--main-color-blue);
+}
+
+.link.blue:hover {
+	color: var(--main-color-green);
+}
+
 .link:hover .icon-v.blue {
 	fill: var(--main-color-green);
+}
+
+.link.social {
+	width: 54px;
+	height: 54px;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+}
+
+.link.social:hover {
+	opacity: .75;
+	transform: rotate(10deg);
+}
+
+.link.telegram {
+	background-color: #26A0DF;
+}
+
+.link.twitter {
+	background-color: #1C9CEA;
+}
+
+.link.vk {
+	background-color: #4A76A8;
+}
+
+.link.facebook {
+	background-color: #4267B2;
+}
+
+.link.ok {
+	background-color: #E77D08;
+}
+
+.link.instagram {
+	background: linear-gradient(133.66deg, #5656C8 -16.14%, #CE2C7B 24.82%, #E66E35 67.77%, #F7CC6A 110.71%);
 }
 
 .btn {
@@ -131,6 +199,42 @@ section {
 	background-color: var(--main-color-white);
 }
 
+form input[disabled] {
+	cursor: not-allowed;
+}
+
+input[disabled],
+fieldset input:not(input[type='submit']) {
+	opacity: .5;
+}
+
+input[type='submit']:focus {
+	box-shadow: 0 0 1px 1px var(--main-color-orange);
+	border-radius: 4px;
+}
+
+fieldset input:focus,
+fieldset input:focus-within {
+	opacity: 1;
+}
+
+.custom-input {
+	border-radius: 4px;
+	border: 1px solid var(--rare-color-light-blue);
+	padding: 9px 16px;
+	font-weight: 600;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	color: var(--main-color-blue);
+}
+
+.custom-input::placeholder {
+	color: var(--rare-color-opacity-blue);
+	font-weight: 600;
+	font-size: 14px;
+}
+
 /*</editor-fold>*/
 
 /*<editor-fold desc="header">*/
@@ -196,7 +300,7 @@ section.main .container-large {
 }
 
 section.main .h-block {
-	max-width: 420px;
+	max-width: 472px;
 	padding-left: 164px;
 }
 
@@ -262,6 +366,7 @@ section.second .row .rc {
 }
 
 section.second .row.second .lc {
+	position: relative;
 	flex-shrink: 0;
 	flex-basis: 38.5%;
 }
@@ -274,13 +379,499 @@ section.second .row.second .rc {
 
 section.second .description {
 	line-height: 20px;
+	font-weight: normal;
 }
 
-/*</editor-fold>*/
-/*</editor-fold>*/
+section.second .card {
+	position: absolute;
+	top: 110px;
+	right: 46px;
+	font-weight: normal;
+	font-size: 12px;
+	border-radius: 8px 8px 8px 0;
+	padding: 4px;
+	color: var(--second-color-green);
+}
 
+section.second .wrap-referral .referral {
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 20px;
+	color: var(--main-color-black);
+}
 
-.footer {
+section.second .wrap-referral {
+	position: absolute;
+	bottom: 18px;
+	left: 16px;
+	right: 16px;
 	display: flex;
-	flex: 0 0 auto;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--main-color-white);
+	border-radius: 8px;
+	padding: 12px 8px;
 }
+
+section.second .wrap-referral [data-copy] {
+	font-size: 12px;
+	cursor: pointer;
+	color: var(--main-color-blue);
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="section earn">*/
+section.earn .container-large {
+	display: flex;
+	padding: 20px 32px 56px 166px;
+	background: var(--second-color-light-blue);
+	border-radius: 16px;
+	gap: 0 50px;
+}
+
+section.earn .description {
+	font-size: 14px;
+	color: var(--main-color-black);
+}
+
+section.earn .h-block {
+	margin-bottom: 42px;
+}
+
+section.earn .lc {
+	padding-top: 54px;
+	flex-basis: 51%;
+}
+
+section.earn .card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+}
+
+section.earn .card-title {
+	font-size: 14px;
+	color: var(--second-color-green);
+	margin-bottom: 4px;
+}
+
+section.earn .card-cnt span,
+section.earn .card-cnt {
+	font-weight: bold;
+	font-size: 36px;
+	color: var(--main-color-black);
+	margin-bottom: 20px;
+}
+
+section.earn .card-footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0 8px;
+}
+
+section.earn .card-footer .count {
+	font-weight: 600;
+	font-size: 14px;
+	width: 42px;
+	height: 35px;
+	background-color: var(--main-color-light-second-blue);
+	border-radius: 4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--main-color-black);
+}
+
+section.earn .card-footer .btn {
+	padding: 7px 16px;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="section invite">*/
+section.invite h2 {
+	text-align: center;
+	font-weight: bold;
+	font-size: 36px;
+	color: var(--main-color-dark);
+	margin-bottom: 40px;
+}
+
+section.invite .row.blue {
+	gap: 0 20px;
+	margin-bottom: 20px;
+}
+
+section.invite .row.blue .lc {
+	padding-top: 114px;
+	padding-right: 30px;
+}
+
+section.invite .row.blue .lc,
+section.invite .row.blue .cc {
+	background: var(--main-color-light-blue) url('./img/section-invite/waves-blue.svg') center / cover no-repeat;
+	border-radius: 16px;
+}
+
+section.invite .row.green .rc,
+section.invite .row.blue .cc {
+	display: flex;
+	flex-shrink: 0;
+	flex-basis: 144px;
+	background-position: -24px;
+}
+
+section.invite .row.blue .rc {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-grow: 1;
+	align-items: center;
+	border-radius: 16px;
+	background-color: var(--main-color-dark-blue);
+}
+
+section.invite .row.blue .rc h3 {
+	text-align: center;
+	padding: 0 82px;
+	font-weight: 600;
+	font-size: 24px;
+	color: var(--main-color-black);
+	margin-bottom: 24px;
+}
+
+section.invite .row.green {
+	gap: 0 20px;
+}
+
+section.invite .row.green .lc {
+	gap: 0 30px;
+	padding: 24px;
+}
+
+section.invite .row.green .lc h3 {
+	font-weight: 600;
+	flex-basis: 274px;
+	font-size: 24px;
+	color: var(--main-color-black);
+}
+
+section.invite .row.green .lc,
+section.invite .row.green .cc {
+	display: flex;
+	align-items: center;
+	flex-basis: 472px;
+	background-color: var(--rare-color-lignt-green);
+	border-radius: 16px;
+}
+
+section.invite .row.green .icon__wrap {
+	display: flex;
+	flex-wrap: wrap;
+	flex-basis: 140px;
+	gap: 16px;
+}
+
+section.invite .row.green .rc {
+	background: var(--main-color-green);
+	border-radius: 16px;
+}
+
+section.invite .row.green .cc {
+	position: relative;
+	padding-top: 26px;
+	padding-left: 86px;
+	overflow: hidden;
+}
+
+section.invite .row.green .cc img {
+	z-index: 1;
+}
+
+section.invite .row.green .cc::after,
+section.invite .row.green .cc::before {
+	content: '';
+	position: absolute;
+	top: -20px;
+	right: -290px;
+	width: 612px;
+	height: 612px;
+	background-color: var(--main-color-green);
+	border-radius: 50%;
+	z-index: 0;
+}
+
+section.invite .row.green .cc::before {
+	width: 862px;
+	height: 862px;
+	top: -160px;
+	right: -430px;
+	background-color: var(--rare-color-green);
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="section should">*/
+section.should h2 {
+	font-weight: bold;
+	font-size: 36px;
+	text-align: center;
+	color: var(--main-color-black);
+	margin-bottom: 80px;
+}
+
+section.should h4 {
+	font-weight: 500;
+	font-size: 18px;
+	color: var(--main-color-black);
+	margin-bottom: 16px;
+}
+
+section.should .row {
+	gap: 0 20px;
+	align-items: center;
+	margin-bottom: 80px;
+}
+
+section.should .row:last-child {
+	margin-bottom: 0;
+}
+
+section.should .img__wrap {
+}
+
+section.should .should__cnt {
+	flex-basis: 308px;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="section why">*/
+section.why h2 {
+	font-weight: 600;
+	font-size: 24px;
+	color: var(--main-color-black);
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+section.why .row {
+	gap: 20px;
+}
+
+section.why .card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 80px 30px;
+}
+
+section.why .card .card-header {
+	margin-bottom: 32px;
+}
+
+section.why .card.orange {
+	background-color: var(--second-color-orange);
+}
+
+section.why .card.blue {
+	background-color: var(--third-color-blue);
+}
+
+section.why .card.red {
+	background-color: var(--second-color-orange);
+}
+
+section.why .card.green {
+	padding: 30px 9px;
+	background-color: var(--third-color-green);
+}
+
+section.why .card.purple {
+	background-color: var(--second-color-purple);
+}
+
+section.why .card.mint {
+	background-color: var(--second-color-mint);
+}
+
+section.why .card {
+	flex-basis: 308px;
+}
+
+section.why .card.small {
+	flex-basis: 144px;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="section faq">*/
+section.faq h2 {
+	font-weight: 600;
+	text-align: center;
+	font-size: 24px;
+	color: var(--main-color-black);
+	margin-bottom: 30px;
+}
+
+section.faq .row {
+	gap: 20px 0;
+}
+
+section.faq .item {
+	width: 100%;
+}
+
+section.faq .item-title {
+	font-weight: normal;
+	font-size: 14px;
+	border: 1px solid var(--third-color-grey);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+	border-radius: 8px;
+	padding: 18px;
+	transition: border-color .3s ease-in-out;
+}
+
+section.faq .item-title .question {
+	flex-basis: 518px;
+}
+
+section.faq .item-title:hover {
+	border-color: var(--rare-color-green);
+}
+
+section.faq .item-title::after {
+	content: '';
+	width: 24px;
+	height: 24px;
+	display: block;
+	transition: transform .3s ease-in-out;
+	background: url('./img/icons/arrow-down.svg') center / cover no-repeat;
+}
+
+section.faq .item-cnt {
+	opacity: 0;
+	overflow: hidden;
+	max-height: 0;
+	transition: height .1s ease-in-out, opacity .3s ease-in-out;
+}
+
+section.faq .item.active .item-title {
+	border-color: var(--rare-color-green);
+}
+
+section.faq .item.active .item-title::after {
+	transform: rotate(180deg);
+}
+
+section.faq .item.active .item-cnt {
+	max-height: unset;
+	opacity: 1;
+	overflow: visible;
+	padding: 10px 10px 0 30px;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="section feedback">*/
+section.feedback .container-small {
+	background: var(--main-color-blue);
+	border-radius: 16px;
+	padding: 34px 34px 34px 74px;
+}
+
+section.feedback .container-small .row {
+	justify-content: space-between;
+}
+
+section.feedback h2 {
+	color: var(--main-color-light-second-blue);
+	font-weight: 600;
+	font-size: 24px;
+	margin-bottom: 0;
+}
+
+section.feedback .rc,
+section.feedback .lc {
+	display: flex;
+	flex-direction: column;
+	gap: 16px 0;
+}
+
+section.feedback .rc .description {
+	color: var(--main-color-light-second-blue);
+	font-size: 14px;
+}
+
+/*</editor-fold>*/
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="modal">*/
+/*<editor-fold desc="modal">*/
+.modal-backdrop {
+	background-color: rgba(255, 255, 255, .95);
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -99;
+	opacity: 0;
+	transition: opacity .3s ease-in-out;
+}
+
+.modal {
+	display: none;
+	overflow: auto;
+	animation: fadeInTop .5s;
+	z-index: 100;
+	box-shadow: 0 0 3px rgba(112, 144, 176, .07), 0 5px 25px rgba(112, 144, 176, .12);
+	border-radius: 16px;
+	background-color: var(--main-color-white);
+	max-width: 442px;
+	width: 100%;
+	padding: 18px;
+	transition: opacity .3s ease-in-out;
+}
+
+.modal .modal-body {
+	text-align: center;
+}
+
+.modal .modal-body fieldset {
+	display: flex;
+	align-items: center;
+	gap: 0 10px;
+}
+
+.modal .success {
+	font-weight: 600;
+	font-size: 14px;
+	color: var(--main-color-blue);
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="keyframes">*/
+@keyframes fadeInTop {
+	from {
+		top: -100%;
+		opacity: 0
+	}
+	to {
+		top: 50%;
+		opacity: 1
+	}
+}
+
+/*</editor-fold>*/
